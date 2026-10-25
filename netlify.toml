@@ -5,8 +5,20 @@
 [build.environment]
   HUGO_VERSION = "0.158.0"
 
+# Build links against the address Netlify is actually serving, so the site works on
+# mountsidance.netlify.app now and switches to mountsidance.com once the domain is attached.
+# $URL is the site's primary address; $DEPLOY_PRIME_URL is the preview/branch address.
+[context.production]
+  command = "hugo --minify --baseURL \"$URL/\""
+
 [context.production.environment]
   HUGO_ENV = "production"
 
+[context.deploy-preview]
+  command = "hugo --minify --baseURL \"$DEPLOY_PRIME_URL/\""
+
 [context.deploy-preview.environment]
   HUGO_ENV = "development"
+
+[context.branch-deploy]
+  command = "hugo --minify --baseURL \"$DEPLOY_PRIME_URL/\""
