@@ -1,0 +1,13 @@
+{{- $date := time.AsTime .date }}
+<li class="msd-event">
+  <div class="msd-event-date">
+    <span class="msd-event-month">{{ $date.Format "Jan" }}</span>
+    <span class="msd-event-day">{{ $date.Format "2" }}</span>
+  </div>
+  <div class="msd-event-body">
+    <h3>{{ .name }}</h3>
+    <p class="msd-card-meta">{{ $date.Format "Monday, January 2, 2006" }}{{ with .time }} · {{ . }}{{ end }}</p>
+    {{- with .location }}<p class="msd-location">{{ partial "icon.html" "map-pin" }}{{ . }}</p>{{ end }}
+    {{- with .details }}<p>{{ . | markdownify }}</p>{{ end }}
+  </div>
+</li>

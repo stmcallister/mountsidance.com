@@ -1,0 +1,95 @@
+baseURL = "https://mountsidance.com"
+languageCode = "en-us"
+title = "Mount Si Dance Team"
+theme = "PaperMod"
+enableRobotsTXT = true
+buildDrafts = false
+enableEmoji = true
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[outputs]
+  home = ["HTML"]
+
+[params]
+  description = "Mount Si Dance Team — a 4A competitive high school dance & drill team in the Snoqualmie Valley. Performances, tryouts, youth camps, and how to support our dancers."
+  keywords = ["Mount Si", "dance team", "Snoqualmie", "Mount Si High School", "drill", "youth dance camp"]
+  defaultTheme = "light"
+  disableThemeToggle = false
+  ShowReadingTime = false
+  ShowShareButtons = false
+  ShowPostNavLinks = false
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = false
+  ShowToc = false
+  hideMeta = true
+  comments = false
+
+  # Shown at the bottom of the sidebar
+  [params.contact]
+    instagram = "mountsi_danceteam"
+    email = "marissa.c.schreiber@gmail.com"
+
+  # Sidebar navigation shown on the home page and every section page.
+  [[params.sidebar]]
+    name = "About Our Team"
+    url = "/about/"
+    blurb = "Who we are and what we do"
+    icon = "users"
+  [[params.sidebar]]
+    name = "Boosters & Sponsors"
+    url = "/boosters/"
+    blurb = "Contacts, fundraisers, and sponsors"
+    icon = "heart"
+  [[params.sidebar]]
+    name = "Performances"
+    url = "/performances/"
+    blurb = "Where to see us this season"
+    icon = "calendar"
+  [[params.sidebar]]
+    name = "Youth Camps"
+    url = "/camps/"
+    blurb = "Dance camps for young dancers"
+    icon = "sparkles"
+  [[params.sidebar]]
+    name = "Tryouts"
+    url = "/tryouts/"
+    blurb = "How to join the team"
+    icon = "clipboard"
+
+# Uncomment once a Google Analytics property exists
+# [services]
+#   [services.googleAnalytics]
+#     ID = "G-XXXXXXXXXX"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+  [[menu.main]]
+    identifier = "boosters"
+    name = "Boosters"
+    url = "/boosters/"
+    weight = 20
+  [[menu.main]]
+    identifier = "performances"
+    name = "Performances"
+    url = "/performances/"
+    weight = 30
+  [[menu.main]]
+    identifier = "camps"
+    name = "Camps"
+    url = "/camps/"
+    weight = 40
+  [[menu.main]]
+    identifier = "tryouts"
+    name = "Tryouts"
+    url = "/tryouts/"
+    weight = 50
+  # TODO: replace "#" with the donation link
+  [[menu.main]]
+    identifier = "donate"
+    name = "Donate"
+    url = "#"
+    weight = 60

@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="msd-layout msd-layout-home">
+  <div class="msd-content">
+    {{- with .Params.tagline }}
+    <h1 class="msd-tagline">{{ . }}</h1>
+    {{- end }}
+
+    {{- with .Params.gallery }}
+    <section class="msd-gallery" aria-label="Performance photos">
+      {{- range . }}
+      <figure>
+        {{ partial "photo.html" (dict "src" .src "alt" .alt) }}
+        {{- with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+      </figure>
+      {{- end }}
+    </section>
+    {{- end }}
+
+    {{- with .Content }}
+    <div class="post-content md-content msd-home-text">{{ . }}</div>
+    {{- end }}
+  </div>
+  {{ partial "sidebar.html" . }}
+</div>
+{{ end }}

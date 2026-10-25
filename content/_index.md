@@ -1,0 +1,41 @@
+---
+title: "Mount Si Dance Team"
+tagline: "Character · Accountability · Teamwork · Strength"
+# Photos live in static/images/gallery/. The first photo is shown large.
+gallery:
+  - src: "/images/gallery/nationals-2026-1.jpg"
+    alt: "Mount Si Dance performing at Nationals"
+    caption: "Nationals 2026"
+  - src: "/images/gallery/state-2026-1.jpg"
+    alt: "Mount Si Dance performing at the state championships"
+    caption: "State 2026"
+  - src: "/images/gallery/nationals-2026-2.jpg"
+    alt: "Mount Si Dance performing at Nationals"
+    caption: "Nationals 2026"
+  - src: "/images/gallery/state-2026-2.jpg"
+    alt: "Mount Si Dance performing at the state championships"
+    caption: "State 2026"
+  - src: "/images/gallery/nationals-2026-3.jpg"
+    alt: "Mount Si Dance performing at Nationals"
+    caption: "Nationals 2026"
+  - src: "/images/gallery/state-2026-3.jpg"
+    alt: "Mount Si Dance performing at the state championships"
+    caption: "State 2026"
+  - src: "/images/gallery/nationals-2026-4.jpg"
+    alt: "Mount Si Dance performing at Nationals"
+    caption: "Nationals 2026"
+  - src: "/images/gallery/nationals-2026-5.jpg"
+    alt: "Mount Si Dance performing at Nationals"
+    caption: "Nationals 2026"
+  - src: "/images/gallery/state-2026-4.jpg"
+    alt: "Mount Si Dance celebrating at the state championships"
+    caption: "State 2026"
+---
+
+## We are Mount Si
+
+We are a 4A competitive high school dance & drill team based in the Snoqualmie Valley.
+
+We promote school spirit by performing at local events, football & basketball games, and
+assemblies — and our competition team competes at the local, state, and national level.
+Use the links to learn about our team, find our next performance, or get ready for tryouts.

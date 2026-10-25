@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="msd-layout">
+  <article class="msd-content post-single">
+    {{ partial "page_header.html" . }}
+
+    <figure class="msd-feature-photo">
+      {{ partial "photo.html" (dict "src" .Params.team_photo "alt" "Mount Si Dance Team photo") }}
+    </figure>
+
+    <div class="post-content md-content">{{ .Content }}</div>
+
+    {{- with .Params.leadership_photo }}
+    <section class="msd-section">
+      <h2>Student Leadership</h2>
+      <figure class="msd-feature-photo">
+        {{ partial "photo.html" (dict "src" . "alt" "Leadership team photo") }}
+      </figure>
+      {{- with $.Params.leadership_shoutout }}<p>{{ . | markdownify }}</p>{{ end }}
+    </section>
+    {{- end }}
+
+    {{- with .Params.coaches }}
+    <section class="msd-section">
+      <h2>Coaches</h2>
+      <div class="msd-card-grid">
+        {{- range . }}
+        <div class="msd-card">
+          <h3>{{ .name }}</h3>
+          <p class="msd-card-meta">{{ .role }}</p>
+          {{- with .email }}<p><a href="mailto:{{ . }}">{{ . }}</a></p>{{ end }}
+          {{- with .bio }}<p>{{ . | markdownify }}</p>{{ end }}
+        </div>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+  </article>
+  {{ partial "sidebar.html" . }}
+</div>
+{{ end }}

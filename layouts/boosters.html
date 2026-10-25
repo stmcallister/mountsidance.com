@@ -1,0 +1,65 @@
+{{ define "main" }}
+<div class="msd-layout">
+  <article class="msd-content post-single">
+    {{ partial "page_header.html" . }}
+
+    <div class="post-content md-content">{{ .Content }}</div>
+
+    {{- with .Params.contacts }}
+    <section class="msd-section">
+      <h2>Booster Contacts</h2>
+      <div class="msd-card-grid">
+        {{- range . }}
+        <div class="msd-card">
+          <h3>{{ .name }}</h3>
+          <p class="msd-card-meta">{{ .role }}</p>
+          {{- with .email }}<p><a href="mailto:{{ . }}">{{ . }}</a></p>{{ end }}
+        </div>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+
+    {{- with .Params.fundraisers }}
+    <section class="msd-section">
+      <h2>Upcoming Fundraisers</h2>
+      <ul class="msd-event-list">
+        {{- range sort . "date" }}
+        {{- $date := time.AsTime .date }}
+        {{- if ge ($date.AddDate 0 0 1) now }}
+        <li class="msd-event">
+          <div class="msd-event-date">
+            <span class="msd-event-month">{{ $date.Format "Jan" }}</span>
+            <span class="msd-event-day">{{ $date.Format "2" }}</span>
+          </div>
+          <div class="msd-event-body">
+            <h3>{{ .name }}</h3>
+            {{- with .details }}<p>{{ . | markdownify }}</p>{{ end }}
+            {{- with .link }}<p><a href="{{ . }}" target="_blank" rel="noopener noreferrer">More info &rarr;</a></p>{{ end }}
+          </div>
+        </li>
+        {{- end }}
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+
+    {{- with .Params.sponsors }}
+    <section class="msd-section">
+      <h2>Thank You to Our Sponsors</h2>
+      <div class="msd-sponsor-grid">
+        {{- range . }}
+        {{- $inner := partial "sponsor.html" . }}
+        {{- with .url }}
+        <a class="msd-sponsor" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $inner }}</a>
+        {{- else }}
+        <div class="msd-sponsor">{{ $inner }}</div>
+        {{- end }}
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+  </article>
+  {{ partial "sidebar.html" . }}
+</div>
+{{ end }}

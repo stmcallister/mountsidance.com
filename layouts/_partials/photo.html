@@ -1,0 +1,13 @@
+{{- /*
+  Renders an image from static/, or a labeled placeholder if the file hasn't been added yet.
+  Usage: partial "photo.html" (dict "src" "/images/team/team-photo.jpg" "alt" "Team photo" "class" "optional")
+*/}}
+{{- $src := .src | default "" }}
+{{- if and $src (fileExists (printf "static%s" $src)) }}
+<img class="msd-photo {{ .class }}" src="{{ $src | relURL }}" alt="{{ .alt }}" loading="lazy" />
+{{- else }}
+<div class="msd-photo msd-photo-placeholder {{ .class }}" role="img" aria-label="{{ .alt }} (photo coming soon)">
+  <span>{{ partial "icon.html" "camera" }} {{ .alt | default "Photo coming soon" }}</span>
+  {{- with $src }}<small>{{ . }}</small>{{ end }}
+</div>
+{{- end }}

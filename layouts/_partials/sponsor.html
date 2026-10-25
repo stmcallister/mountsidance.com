@@ -1,0 +1,5 @@
+{{- with .logo }}
+{{ partial "photo.html" (dict "src" . "alt" $.name "class" "msd-sponsor-logo") }}
+{{- end }}
+<strong>{{ .name }}</strong>
+{{- with .level }}<small>{{ . }}</small>{{ end }}
