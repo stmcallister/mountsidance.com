@@ -35,7 +35,7 @@ Every page is a Markdown file in `content/`. Lists (performances, sponsors, lead
 | About Our Team | `content/about.md` | Team bio (body), optional `leadership_photo` + `leadership_shoutout`, `coaches` |
 | Boosters & Sponsors | `content/boosters.md` | `contacts`, `fundraisers`, `sponsors` |
 | Performances | `content/performances.md` | `performances` |
-| Youth Camps | `content/camps.md` | `camps` |
+| Youth Camps | `content/camps.md` | `flyer` (dates, price, `register` link), `camps`, summer camp note (body) |
 | Tryouts | `content/tryouts.md` | `key_dates`, `signup` link, details (body) |
 
 **No student names or personal info** — dancers are minors. Leadership shoutouts are a group message, not individual cards.
@@ -54,7 +54,8 @@ Add images under `static/images/` using the paths referenced in the frontmatter.
 | Team photo | `static/images/team/team-photo.jpg` |
 | Leadership photo (optional) | `static/images/team/leadership-photo.jpg` |
 | Sponsor logos | `static/images/sponsors/` |
-| Youth camp | `static/images/camps/youth-camp.jpg` |
+| Camp flyer dancers (used unaltered) | `assets/images/camps/flyer-dancers.png` |
+| Camp flyer background & snowflakes | `static/images/camps/flyer/` |
 
 To use different filenames, update the matching `src` / photo field in the content file.
 

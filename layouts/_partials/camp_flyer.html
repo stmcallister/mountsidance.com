@@ -1,0 +1,48 @@
+{{- /*
+  Web version of the camp flyer (originally designed in Canva). Elements are positioned on an
+  816×1056 "page" using percentages and cqw units, so the flyer scales like the printed one.
+  Text comes from the page's `flyer` front matter; the dancer cutout is used unaltered.
+*/}}
+{{- $register := .register | default "#" }}
+<div class="msd-flyer">
+  <div class="msd-flyer-page">
+    <img class="msd-flyer-deco" src="{{ "images/camps/flyer/snowflake-1.png" | relURL }}" alt="" style="left:79.71%;top:0.27%;width:17.6%;height:12.99%">
+    <img class="msd-flyer-deco" src="{{ "images/camps/flyer/snowflake-2.png" | relURL }}" alt="" style="left:3.62%;top:2.81%;width:15.7%;height:14.23%">
+    <img class="msd-flyer-deco" src="{{ "images/camps/flyer/snowflake-4.png" | relURL }}" alt="" style="left:91.2%;top:12.73%;width:7%;height:5.85%">
+    <img class="msd-flyer-deco" src="{{ "images/camps/flyer/sparkle-1.png" | relURL }}" alt="" style="left:85.62%;top:15.65%;width:5.96%;height:5.21%">
+
+    <p class="msd-flyer-presenter">{{ .presenter }}</p>
+    <p class="msd-flyer-mini">{{ .title_top }}</p>
+
+    <div class="msd-flyer-dancers">
+      {{- with resources.Get .dancers }}
+      {{- $webp := .Process "webp q90" }}
+      <picture>
+        <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+        <img src="{{ .RelPermalink }}" alt="Mount Si dancers with red poms">
+      </picture>
+      {{- end }}
+    </div>
+
+    <p class="msd-flyer-title">{{ .title_main }}</p>
+    <p class="msd-flyer-subtitle">{{ .subtitle }}</p>
+
+    <img class="msd-flyer-deco" src="{{ "images/camps/flyer/sparkles-1.png" | relURL }}" alt="" style="left:0%;top:31.07%;width:11.73%;height:15.48%">
+    <img class="msd-flyer-deco" src="{{ "images/camps/flyer/snowflake-3.png" | relURL }}" alt="" style="left:11.46%;top:35.65%;width:9.84%;height:7.78%">
+    <img class="msd-flyer-deco" src="{{ "images/camps/flyer/sparkle-2.png" | relURL }}" alt="" style="left:84.35%;top:29.82%;width:6.86%;height:5.21%">
+    <img class="msd-flyer-deco" src="{{ "images/camps/flyer/snowflake-5.png" | relURL }}" alt="" style="left:88.6%;top:35.03%;width:5.96%;height:5.21%">
+
+    <a class="msd-flyer-register" href="{{ $register }}" {{- if hasPrefix $register "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>Register Here</a>
+
+    <p class="msd-flyer-heading msd-flyer-camp">Camp</p>
+    <p class="msd-flyer-when msd-flyer-camp-when">{{ .camp_dates | safeHTML }}<br>{{ .camp_time }}</p>
+    <p class="msd-flyer-grades">{{ .grades }}</p>
+    <p class="msd-flyer-price">{{ .price }}</p>
+    <p class="msd-flyer-heading msd-flyer-perf">Performance</p>
+    <p class="msd-flyer-when msd-flyer-perf-when">{{ .performance_date | safeHTML }}<br>{{ .performance_time }}</p>
+
+    {{- with .disclaimer }}
+    <p class="msd-flyer-disclaimer">{{ . }}</p>
+    {{- end }}
+  </div>
+</div>

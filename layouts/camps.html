@@ -3,13 +3,33 @@
   <article class="msd-content post-single">
     {{ partial "page_header.html" . }}
 
+    {{- with .Params.flyer }}
+    {{ partial "camp_flyer.html" . }}
+
+    <section class="msd-section">
+      <h2>Camp Details</h2>
+      <div class="msd-card msd-camp-details">
+        <dl class="msd-details">
+          {{- with .camp_dates }}<dt>Camp</dt><dd>{{ . | safeHTML }}, {{ $.Params.flyer.camp_time }}</dd>{{ end }}
+          {{- with .location }}<dt>Where</dt><dd>{{ . }}</dd>{{ end }}
+          {{- with .grades }}<dt>Who</dt><dd>{{ . }}</dd>{{ end }}
+          {{- with .price }}<dt>Cost</dt><dd>{{ . }}</dd>{{ end }}
+          {{- with .performance_date }}<dt>Performance</dt><dd>{{ . | safeHTML }}, {{ $.Params.flyer.performance_time }}</dd>{{ end }}
+        </dl>
+        {{- with .register }}
+        <a class="msd-button" href="{{ . }}" target="_blank" rel="noopener noreferrer">Register &rarr;</a>
+        {{- else }}
+        <p class="msd-card-meta">Registration link coming soon!</p>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+
     {{- with .Params.photo }}
     <figure class="msd-feature-photo">
       {{ partial "photo.html" (dict "src" . "alt" "Youth dance camp") }}
     </figure>
     {{- end }}
-
-    <div class="post-content md-content">{{ .Content }}</div>
 
     {{- with .Params.camps }}
     <section class="msd-section">
@@ -31,6 +51,8 @@
       </div>
     </section>
     {{- end }}
+
+    <div class="post-content md-content msd-section">{{ .Content }}</div>
   </article>
   {{ partial "sidebar.html" . }}
 </div>

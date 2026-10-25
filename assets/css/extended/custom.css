@@ -650,6 +650,226 @@ a.msd-sponsor:hover {
     box-shadow: none;
 }
 
+/* ---------- Camp flyer (web version of the Canva flyer) ---------- */
+
+.msd-flyer {
+    --msd-flyer-red: rgb(200, 6, 10);
+    --msd-flyer-ink: rgb(7, 7, 7);
+    /* Closest Google Fonts to the flyer's Horta and Extenda */
+    --msd-flyer-horta: 'Squada One', 'Roboto Condensed', sans-serif;
+    --msd-flyer-extenda: 'Anton', 'Roboto Condensed', sans-serif;
+    container-type: inline-size;
+    max-width: 640px;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--msd-shadow);
+}
+
+.msd-flyer-page {
+    position: relative;
+    aspect-ratio: 816 / 1056;
+    background: #ececec url("/images/camps/flyer/paper.jpg") center / cover no-repeat;
+    overflow: hidden;
+}
+
+.msd-flyer-page > * {
+    position: absolute;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.msd-flyer-deco {
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.msd-flyer-presenter,
+.msd-flyer-subtitle,
+.msd-flyer-heading,
+.msd-flyer-mini,
+.msd-flyer-title {
+    text-transform: uppercase;
+}
+
+/* Dancer cutout: same crop as the flyer (frame clips rows 75.8–532 of a 731px-tall image) */
+.msd-flyer-dancers {
+    left: -13.34%;
+    top: 36.94%;
+    width: 134.78%;
+    height: 43.2%;
+    overflow: hidden;
+}
+
+.msd-flyer-dancers img {
+    position: absolute;
+    left: 0;
+    top: -16.61%;
+    width: 100%;
+    height: auto;
+}
+
+.msd-flyer-register {
+    left: 33.8%;
+    top: 76.67%;
+    width: 32.66%;
+    height: 7.04%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--msd-flyer-red);
+    border-radius: 1.6cqw;
+    color: #fff !important;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 4.29cqw;
+    text-transform: uppercase;
+    text-decoration: underline !important;
+    text-underline-offset: 0.5cqw;
+    box-shadow: none !important;
+}
+
+.msd-flyer-register:hover {
+    filter: brightness(1.12);
+}
+
+.msd-flyer-disclaimer {
+    white-space: normal;
+}
+
+.msd-flyer-presenter {
+    left: 50.22%;
+    top: 0.89%;
+    transform: translateX(-50%) scaleX(0.803);
+    font-family: var(--msd-flyer-horta);
+    font-weight: 400;
+    font-size: 6.440cqw;
+    line-height: 1;
+    color: var(--msd-flyer-ink);
+}
+
+.msd-flyer-mini {
+    left: 49.47%;
+    top: 5.44%;
+    transform: translateX(-50%) scaleX(1.106);
+    font-family: var(--msd-flyer-extenda);
+    font-weight: 400;
+    font-size: 21.400cqw;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--msd-flyer-red);
+}
+
+.msd-flyer-title {
+    left: 49.78%;
+    top: 20.19%;
+    transform: translateX(-50%) scaleX(0.805);
+    font-family: var(--msd-flyer-extenda);
+    font-weight: 400;
+    font-size: 18.118cqw;
+    line-height: 1;
+    color: var(--msd-flyer-red);
+}
+
+.msd-flyer-subtitle {
+    left: 49.87%;
+    top: 33.33%;
+    transform: translateX(-50%) scaleX(0.721);
+    font-family: var(--msd-flyer-horta);
+    font-weight: 400;
+    font-size: 7.387cqw;
+    line-height: 1;
+    color: var(--msd-flyer-ink);
+}
+
+.msd-flyer-camp {
+    left: 15.93%;
+    top: 80.27%;
+    transform: translateX(-50%) scaleX(0.676);
+    font-family: var(--msd-flyer-horta);
+    font-weight: 400;
+    font-size: 6.251cqw;
+    line-height: 1;
+    color: var(--msd-flyer-red);
+}
+
+.msd-flyer-camp-when {
+    left:1.85%;
+    top:85.04%;
+    width:29.07%;
+    height:9.00%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 3.039cqw;
+    line-height: 4.534cqw;
+    color: var(--msd-flyer-ink);
+}
+
+.msd-flyer-grades {
+    left:33.47%;
+    top:84.54%;
+    width:32.62%;
+    height:2.27%;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 2.463cqw;
+    line-height: 2.451cqw;
+    color: var(--msd-flyer-ink);
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+    text-transform: uppercase;
+}
+
+.msd-flyer-price {
+    left:27.87%;
+    top:87.29%;
+    width:40.38%;
+    height:7.62%;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 8.297cqw;
+    line-height: 8.211cqw;
+    color: var(--msd-flyer-red);
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+}
+
+.msd-flyer-perf {
+    left: 82.62%;
+    top: 80.27%;
+    transform: translateX(-50%) scaleX(0.686);
+    font-family: var(--msd-flyer-horta);
+    font-weight: 400;
+    font-size: 6.251cqw;
+    line-height: 1;
+    color: var(--msd-flyer-red);
+}
+
+.msd-flyer-perf-when {
+    left:68.25%;
+    top:85.04%;
+    width:29.07%;
+    height:9.00%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 3.039cqw;
+    line-height: 4.534cqw;
+    color: var(--msd-flyer-ink);
+}
+
+.msd-flyer-disclaimer {
+    left:1.14%;
+    top:94.17%;
+    width:98.05%;
+    height:5.83%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.479cqw;
+    line-height: 1.961cqw;
+    color: var(--msd-flyer-ink);
+}
+
 /* ---------- Footer ---------- */
 
 .footer {
