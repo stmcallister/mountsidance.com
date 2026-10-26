@@ -1,6 +1,23 @@
 {{ define "main" }}
 <div class="msd-layout msd-layout-home">
   <div class="msd-content">
+    {{- /* Camp flyer, pulled from camps.md, shown first while feature_camp is set */}}
+    {{- if .Params.feature_camp }}
+    {{- with site.GetPage "/camps" }}
+    {{- with .Params.flyer }}
+    <section class="msd-home-camp" aria-label="Youth dance camp">
+      {{ partial "camp_flyer.html" . }}
+      <div class="msd-home-camp-actions">
+        {{- with .register }}
+        <a class="msd-button" href="{{ . }}" target="_blank" rel="noopener noreferrer">Register &rarr;</a>
+        {{- end }}
+        <a class="msd-button msd-button-outline" href="{{ "/camps/" | relURL }}">Camp details</a>
+      </div>
+    </section>
+    {{- end }}
+    {{- end }}
+    {{- end }}
+
     {{- with .Params.tagline }}
     <h1 class="msd-tagline">{{ . }}</h1>
     {{- end }}
@@ -19,7 +36,18 @@
     {{- with .Content }}
     <div class="post-content md-content msd-home-text">{{ . }}</div>
     {{- end }}
+
+    {{- with site.Params.sections }}
+    <nav class="msd-explore" aria-label="Explore the team">
+      {{- range . }}
+      <a href="{{ .url | relURL }}">
+        <span class="msd-explore-icon">{{ partial "icon.html" .icon }}</span>
+        <strong>{{ .name }}</strong>
+        <small>{{ .blurb }}</small>
+      </a>
+      {{- end }}
+    </nav>
+    {{- end }}
   </div>
-  {{ partial "sidebar.html" . }}
 </div>
 {{ end }}

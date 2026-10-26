@@ -18,15 +18,16 @@ Hugo version: 0.158.0 (specified in `netlify.toml`; PaperMod requires 0.158.0+).
 ## Architecture
 
 - **Theme**: PaperMod, installed as a git submodule in `themes/PaperMod`. Do not edit theme files directly — use layout overrides instead.
-- **Layouts** (`layouts/`): `home.html` for the home page, plus one layout per section page (`about.html`, `boosters.html`, `performances.html`, `camps.html`, `tryouts.html`), selected via `layout:` in each page's frontmatter. Every page uses the two-column `.msd-layout` with the sidebar partial.
-- **Partials** (`layouts/_partials/`): `sidebar.html` (links come from `[[params.sidebar]]` in `hugo.toml`), `photo.html` (renders an image from `static/`, or a labeled placeholder if the file doesn't exist yet), `performance.html`, `sponsor.html`, `page_header.html`.
+- **Layouts** (`layouts/`): `home.html` for the home page, plus one layout per section page (`about.html`, `boosters.html`, `performances.html`, `camps.html`, `tryouts.html`), selected via `layout:` in each page's frontmatter. Every page wraps its content in `.msd-layout`; navigation is the PaperMod header menu (`[menu.main]` in `hugo.toml`).
+- **Partials** (`layouts/_partials/`): `photo.html` (renders an image from `static/`, or a labeled placeholder if the file doesn't exist yet), `performance.html`, `sponsor.html`, `page_header.html`.
 - **Header override**: `layouts/_partials/header.html` is a copy of PaperMod's header whose only change is a star (instead of a moon) for the theme toggle. If the theme's header changes upstream, re-copy it and reapply that one change.
+- **Home section cards**: the icon cards under the home intro come from `[[params.sections]]` in `hugo.toml`. Contact links (Instagram, coach email) live in `params.footer.text`.
 - **Custom CSS**: `assets/css/extended/custom.css` — PaperMod's extension point. Palette: school-gray backgrounds with rose (`--msd-red`), blush, and gold accents; fonts are Playfair Display (headings) and Jost (body). No emojis or script fonts. Class prefix is `msd-`.
 
 ## Content
 
 All content is single Markdown pages in `content/` with structured lists in YAML frontmatter:
-- `_index.md` — home tagline and `gallery` photo list.
+- `_index.md` — home tagline, `gallery` photo list, and `feature_camp` (when true, the home page shows the camp flyer from `camps.md` first; edit the flyer only in `camps.md`).
 - `about.md` — `team_photo`, optional `leadership_photo` + `leadership_shoutout`, `coaches`; body is the team bio.
 - `boosters.md` — `contacts`, `fundraisers` (past dates hidden), `sponsors` (name/level/logo/url).
 - `performances.md` — `performances` (event/date/time/location/map/notes); past dates move to "Earlier This Season".

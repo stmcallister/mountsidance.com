@@ -24,33 +24,32 @@ disableKinds = ["taxonomy", "term", "RSS"]
   hideMeta = true
   comments = false
 
-  # Shown at the bottom of the sidebar
-  [params.contact]
-    instagram = "mountsi_danceteam"
-    email = "marissa.c.schreiber@gmail.com"
+  # Contact links shown in the footer of every page
+  [params.footer]
+    text = "[Instagram @mountsi_danceteam](https://www.instagram.com/mountsi_danceteam/) · [Email the coach](mailto:marissa.c.schreiber@gmail.com)"
 
-  # Sidebar navigation shown on the home page and every section page.
-  [[params.sidebar]]
+  # Section cards shown on the home page
+  [[params.sections]]
     name = "About Our Team"
     url = "/about/"
     blurb = "Who we are and what we do"
     icon = "users"
-  [[params.sidebar]]
+  [[params.sections]]
     name = "Boosters & Sponsors"
     url = "/boosters/"
     blurb = "Contacts, fundraisers, and sponsors"
     icon = "heart"
-  [[params.sidebar]]
+  [[params.sections]]
     name = "Performances"
     url = "/performances/"
     blurb = "Where to see us this season"
     icon = "calendar"
-  [[params.sidebar]]
+  [[params.sections]]
     name = "Youth Camps"
     url = "/camps/"
     blurb = "Dance camps for young dancers"
     icon = "sparkles"
-  [[params.sidebar]]
+  [[params.sections]]
     name = "Tryouts"
     url = "/tryouts/"
     blurb = "How to join the team"

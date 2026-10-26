@@ -16,8 +16,7 @@ flyer:
   price: "$95"
   performance_date: "Dec 5<sup>th</sup>"
   performance_time: "5:45 PM"
-  # TODO: add the registration link
-  register: ""
+  register: "https://docs.google.com/forms/d/e/1FAIpQLScrt70BDhXF-da0DAL6eR_0OwKShw4Jd_O_2gnshkvB6uwfjw/viewform"
   disclaimer: "The Snoqualmie Valley School District does not sponsor this event and the district assumes no responsibility for it. In consideration of the privilege to distribute materials, the Snoqualmie Valley School District shall be held harmless from any cause of action filed in any court or administrative tribunal arising out of the distribution of these materials, including all costs, attorney's fees, judgements or awards."
 # Additional camp sessions (cards). All fields except `name` are optional.
 camps: []
