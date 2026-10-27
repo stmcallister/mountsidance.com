@@ -5,35 +5,8 @@
 
     <div class="post-content md-content">{{ .Content }}</div>
 
-    {{- $upcoming := slice }}
-    {{- $past := slice }}
-    {{- range sort (.Params.performances | default slice) "date" }}
-    {{- if ge ((time.AsTime .date).AddDate 0 0 1) now }}
-    {{- $upcoming = $upcoming | append . }}
-    {{- else }}
-    {{- $past = $past | append . }}
-    {{- end }}
-    {{- end }}
-
-    <section class="msd-section">
-      <h2>Upcoming Performances</h2>
-      {{- if $upcoming }}
-      <ul class="msd-event-list">
-        {{- range $upcoming }}{{ partial "performance.html" . }}{{ end }}
-      </ul>
-      {{- else }}
-      <p>Our schedule is being finalized — check back soon!</p>
-      {{- end }}
-    </section>
-
-    {{- with $past }}
-    <section class="msd-section msd-past">
-      <h2>Earlier This Season</h2>
-      <ul class="msd-event-list">
-        {{- range sort . "date" "desc" }}{{ partial "performance.html" . }}{{ end }}
-      </ul>
-    </section>
-    {{- end }}
+    {{ partial "schedule.html" (dict "title" "Performances" "items" .Params.performances) }}
+    {{ partial "schedule.html" (dict "title" "Competition Squad" "items" .Params.competitions) }}
   </article>
 </div>
 {{ end }}

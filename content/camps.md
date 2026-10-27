@@ -29,8 +29,15 @@ camps: []
 #    register: "https://..."
 ---
 
-## Summer Camp
+## Past Camps
 
-Save the date — we'll be hosting a **summer dance camp in August**! Details and registration
-will be announced soon. Follow us on [Instagram](https://www.instagram.com/mountsi_danceteam/)
-or email [Coach Marissa](mailto:marissa.c.schreiber@gmail.com) to hear as soon as it's posted.
+### Summer Dance Camp — August 2026
+
+**August 18–20, 9:00 AM – 1:00 PM**
+
+Our summer campers spent three mornings dancing with the Mount Si Dance Team — warming up,
+building skills, and learning a routine of their very own. Then they took their routine to the
+streets, performing in the **Snoqualmie Days Parade** on August 22 in front of cheering crowds.
+
+Thank you to every camper and family who joined us! If your dancer missed out, our
+Mini Dance Camp in December (see the flyer above) is the next chance to dance with the team.

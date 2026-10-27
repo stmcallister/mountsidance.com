@@ -7,7 +7,7 @@
 
     {{- with .Params.contacts }}
     <section class="msd-section">
-      <h2>Booster Contacts</h2>
+      <h2>Booster Board</h2>
       <div class="msd-card-grid">
         {{- range . }}
         <div class="msd-card">
@@ -44,19 +44,25 @@
     </section>
     {{- end }}
 
-    {{- with .Params.sponsors }}
-    <section class="msd-section">
-      <h2>Thank You to Our Sponsors</h2>
-      <div class="msd-sponsor-grid">
-        {{- range . }}
-        {{- $inner := partial "sponsor.html" . }}
-        {{- with .url }}
-        <a class="msd-sponsor" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $inner }}</a>
-        {{- else }}
-        <div class="msd-sponsor">{{ $inner }}</div>
-        {{- end }}
-        {{- end }}
+    {{- with .Params.sponsor_tiers }}
+    <section class="msd-section msd-sponsors">
+      <h2 class="msd-thank-you">Thank You!</h2>
+      <p class="msd-thank-you-sub">to the sponsors who make our season possible</p>
+      {{- range . }}
+      <div class="msd-sponsor-tier msd-sponsor-tier-{{ .level | urlize }}">
+        <h3>{{ .level }}</h3>
+        <div class="msd-sponsor-grid">
+          {{- range .sponsors }}
+          {{- $inner := partial "sponsor.html" . }}
+          {{- with .url }}
+          <a class="msd-sponsor" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $inner }}</a>
+          {{- else }}
+          <div class="msd-sponsor">{{ $inner }}</div>
+          {{- end }}
+          {{- end }}
+        </div>
       </div>
+      {{- end }}
     </section>
     {{- end }}
   </article>

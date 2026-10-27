@@ -502,7 +502,207 @@ h1, h2, h3, h4,
     color: var(--secondary);
 }
 
+/* ---------- Season schedule (performances page) ---------- */
+
+.msd-schedule {
+    display: table;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--msd-shadow);
+    overflow: hidden;
+    font-size: 0.95rem;
+}
+
+.msd-schedule th,
+.msd-schedule td {
+    padding: 0.85rem 1.1rem;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.msd-schedule tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.msd-schedule thead th {
+    background: var(--msd-blush);
+    color: var(--msd-red);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+}
+
+.msd-schedule-year th {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background: var(--code-bg);
+    color: var(--msd-gold);
+    font-family: var(--msd-display);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.msd-schedule-date {
+    width: 7.5rem;
+    white-space: nowrap;
+}
+
+.msd-schedule-date small,
+.msd-schedule-date strong {
+    display: block;
+    line-height: 1.25;
+}
+
+.msd-schedule-date small {
+    color: var(--secondary);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+
+.msd-schedule-date strong {
+    font-family: var(--msd-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--msd-red);
+}
+
+.msd-schedule-event strong {
+    font-weight: 500;
+}
+
+.msd-schedule-event small {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--secondary);
+    font-size: 0.85rem;
+}
+
+.msd-schedule-event small p {
+    margin: 0;
+}
+
+.msd-schedule-event .msd-icon {
+    width: 0.95rem;
+    height: 0.95rem;
+    margin-right: 0.3rem;
+    vertical-align: -0.15em;
+    color: var(--msd-red);
+}
+
+/* Time is its own column on wide screens and moves under the date on phones */
+.msd-schedule-date .msd-schedule-time-inline {
+    display: none;
+}
+
+.msd-schedule-time {
+    width: 6.5rem;
+    white-space: nowrap;
+    color: var(--secondary);
+}
+
+.msd-schedule-badge {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    background: var(--msd-red);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    vertical-align: 0.15em;
+}
+
+.msd-schedule-next td {
+    background: var(--msd-red-soft);
+}
+
+.msd-schedule-past td {
+    opacity: 0.5;
+}
+
+.msd-schedule-past .msd-schedule-date strong {
+    color: var(--secondary);
+}
+
 /* ---------- Sponsors ---------- */
+
+.msd-sponsors {
+    text-align: center;
+}
+
+.msd-sponsors > h2.msd-thank-you {
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+}
+
+.msd-sponsors > h2.msd-thank-you::after {
+    margin-inline: auto;
+}
+
+.msd-thank-you-sub {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 2rem;
+}
+
+.msd-sponsor-tier {
+    margin-top: 2rem;
+}
+
+.msd-sponsor-tier h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--msd-gold);
+    margin-bottom: 0.9rem;
+}
+
+.msd-sponsor-tier-platinum h3 {
+    color: var(--msd-red);
+    font-size: 1rem;
+}
+
+/* Logo cards get smaller with each tier */
+.msd-sponsor-tier-platinum .msd-sponsor-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.msd-sponsor-tier-platinum .msd-sponsor .msd-sponsor-logo {
+    max-width: 200px;
+    height: 110px;
+}
+
+.msd-sponsor-tier-platinum strong {
+    font-size: 1.1rem;
+}
+
+.msd-sponsor-tier-silver .msd-sponsor-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+.msd-sponsor-tier-silver .msd-sponsor .msd-sponsor-logo {
+    height: 60px;
+}
+
+.msd-sponsor-tier-silver strong {
+    font-size: 0.9rem;
+}
 
 .msd-sponsor-grid {
     display: grid;
@@ -545,6 +745,9 @@ a.msd-sponsor:hover {
     object-fit: contain;
     padding: 0.25rem;
     box-shadow: none;
+    /* Logos are made for white backgrounds; keep one behind them in dark mode */
+    background: #fff;
+    border-radius: 8px;
 }
 
 /* ---------- Camp flyer (web version of the Canva flyer) ---------- */
@@ -863,6 +1066,31 @@ a.msd-sponsor:hover {
 
     .post-title {
         font-size: 2.2rem;
+    }
+
+    .msd-sponsors > h2.msd-thank-you {
+        font-size: 2.5rem;
+    }
+
+    .msd-schedule th,
+    .msd-schedule td {
+        padding: 0.7rem 0.75rem;
+    }
+
+    .msd-schedule-date {
+        width: 5.5rem;
+    }
+
+    .msd-schedule th:nth-child(3),
+    .msd-schedule-time {
+        display: none;
+    }
+
+    .msd-schedule-date .msd-schedule-time-inline {
+        display: block;
+        margin-top: 0.15rem;
+        text-transform: none;
+        letter-spacing: 0.02em;
     }
 
     .msd-home-text {

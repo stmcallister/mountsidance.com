@@ -1,0 +1,58 @@
+{{- /*
+  Season schedule table. Usage: partial "schedule.html" (dict "title" "Performances" "items" .Params.performances)
+  Rows stay in date order all season; past rows are muted and the next upcoming one is marked.
+  A year heading row appears whenever the year changes.
+*/}}
+{{- with .items }}
+{{- $items := sort . "date" }}
+{{- $hasTime := where $items "time" "!=" nil }}
+{{- $next := "" }}
+{{- range $items }}
+{{- if and (not $next) (ge ((time.AsTime (.end_date | default .date)).AddDate 0 0 1) now) }}{{ $next = .date }}{{ end }}
+{{- end }}
+<section class="msd-section">
+  <h2>{{ $.title }}</h2>
+  <table class="msd-schedule">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Event</th>
+        {{- if $hasTime }}<th scope="col">Time</th>{{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      {{- $year := 0 }}
+      {{- range $items }}
+      {{- $date := time.AsTime .date }}
+      {{- $end := time.AsTime (.end_date | default .date) }}
+      {{- if ne $date.Year $year }}
+      {{- $year = $date.Year }}
+      <tr class="msd-schedule-year"><th colspan="3" scope="rowgroup">{{ $year }}</th></tr>
+      {{- end }}
+      {{- $past := lt ($end.AddDate 0 0 1) now }}
+      <tr{{ if $past }} class="msd-schedule-past"{{ else if eq .date $next }} class="msd-schedule-next"{{ end }}>
+        <td class="msd-schedule-date">
+          {{- if .end_date }}
+          <small>{{ $date.Format "Mon" }}–{{ $end.Format "Mon" }}</small>
+          <strong>{{ $date.Format "Jan 2" }}–{{ if eq $date.Month $end.Month }}{{ $end.Format "2" }}{{ else }}{{ $end.Format "Jan 2" }}{{ end }}</strong>
+          {{- else }}
+          <small>{{ $date.Format "Mon" }}</small>
+          <strong>{{ $date.Format "Jan 2" }}</strong>
+          {{- end }}
+          {{- with .time }}<small class="msd-schedule-time-inline">{{ . }}</small>{{ end }}
+        </td>
+        <td class="msd-schedule-event">
+          <strong>{{ .event }}</strong>
+          {{- if eq .date $next }} <span class="msd-schedule-badge">Next up</span>{{ end }}
+          {{- with .location }}
+          <small class="msd-schedule-where">{{ partial "icon.html" "map-pin" }}{{ with $.map }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ end }}{{ . }}{{ with $.map }}</a>{{ end }}</small>
+          {{- end }}
+          {{- with .notes }}<small>{{ . | markdownify }}</small>{{ end }}
+        </td>
+        {{- if $hasTime }}<td class="msd-schedule-time">{{ .time }}</td>{{ end }}
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+</section>
+{{- end }}

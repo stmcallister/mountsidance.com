@@ -1,5 +1,5 @@
-{{- with .logo }}
-{{ partial "photo.html" (dict "src" . "alt" $.name "class" "msd-sponsor-logo") }}
-{{- end }}
+{{- /* Sponsor card body. The logo shows once its file exists in static/; until then, just the name. */}}
+{{- with .logo }}{{ if fileExists (printf "static%s" .) }}
+<img class="msd-sponsor-logo" src="{{ . | relURL }}" alt="{{ $.name }}" loading="lazy" />
+{{- end }}{{ end }}
 <strong>{{ .name }}</strong>
-{{- with .level }}<small>{{ . }}</small>{{ end }}
