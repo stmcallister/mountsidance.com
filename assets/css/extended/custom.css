@@ -134,13 +134,13 @@ h1, h2, h3, h4,
 
 /* ---------- Page structure ---------- */
 
-/* Slightly wider than PaperMod's default column; the home page is wider for the gallery */
+/* Slightly wider than PaperMod's default column; home and photos are wider still */
 .main:has(.msd-layout) {
     max-width: calc(860px + var(--gap) * 2);
     padding-top: 2.25rem;
 }
 
-.main:has(.msd-layout-home) {
+.main:has(.msd-layout-wide) {
     max-width: calc(1000px + var(--gap) * 2);
 }
 
@@ -986,7 +986,7 @@ a.msd-sponsor:hover {
 
 .msd-explore {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
     margin-top: 2rem;
 }

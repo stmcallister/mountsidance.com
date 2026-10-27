@@ -3,35 +3,6 @@ title: "Mount Si Dance Team"
 # Show the camp flyer (from camps.md) at the top of the home page. Set to false after camp.
 feature_camp: true
 tagline: "Character · Accountability · Teamwork · Strength"
-# Photos live in static/images/gallery/. The first photo is shown large.
-gallery:
-  - src: "/images/gallery/nationals-2026-1.jpg"
-    alt: "Mount Si Dance performing at Nationals"
-    caption: "Nationals 2026"
-  - src: "/images/gallery/state-2026-1.jpg"
-    alt: "Mount Si Dance performing at the state championships"
-    caption: "State 2026"
-  - src: "/images/gallery/nationals-2026-2.jpg"
-    alt: "Mount Si Dance performing at Nationals"
-    caption: "Nationals 2026"
-  - src: "/images/gallery/state-2026-2.jpg"
-    alt: "Mount Si Dance performing at the state championships"
-    caption: "State 2026"
-  - src: "/images/gallery/nationals-2026-3.jpg"
-    alt: "Mount Si Dance performing at Nationals"
-    caption: "Nationals 2026"
-  - src: "/images/gallery/state-2026-3.jpg"
-    alt: "Mount Si Dance performing at the state championships"
-    caption: "State 2026"
-  - src: "/images/gallery/nationals-2026-4.jpg"
-    alt: "Mount Si Dance performing at Nationals"
-    caption: "Nationals 2026"
-  - src: "/images/gallery/nationals-2026-5.jpg"
-    alt: "Mount Si Dance performing at Nationals"
-    caption: "Nationals 2026"
-  - src: "/images/gallery/state-2026-4.jpg"
-    alt: "Mount Si Dance celebrating at the state championships"
-    caption: "State 2026"
 ---
 
 ## We are Mount Si

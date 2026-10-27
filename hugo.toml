@@ -54,6 +54,11 @@ disableKinds = ["taxonomy", "term", "RSS"]
     url = "/tryouts/"
     blurb = "How to join the team"
     icon = "clipboard"
+  [[params.sections]]
+    name = "Photos"
+    url = "/photos/"
+    blurb = "Highlights from our season"
+    icon = "camera"
 
 # Uncomment once a Google Analytics property exists
 # [services]
@@ -86,6 +91,11 @@ disableKinds = ["taxonomy", "term", "RSS"]
     name = "Tryouts"
     url = "/tryouts/"
     weight = 50
+  [[menu.main]]
+    identifier = "photos"
+    name = "Photos"
+    url = "/photos/"
+    weight = 55
   [[menu.main]]
     identifier = "donate"
     name = "Donate"

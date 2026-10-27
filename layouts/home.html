@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="msd-layout msd-layout-home">
+<div class="msd-layout msd-layout-wide">
   <div class="msd-content">
     {{- /* Camp flyer, pulled from camps.md, shown first while feature_camp is set */}}
     {{- if .Params.feature_camp }}
@@ -20,17 +20,6 @@
 
     {{- with .Params.tagline }}
     <h1 class="msd-tagline">{{ . }}</h1>
-    {{- end }}
-
-    {{- with .Params.gallery }}
-    <section class="msd-gallery" aria-label="Performance photos">
-      {{- range . }}
-      <figure>
-        {{ partial "photo.html" (dict "src" .src "alt" .alt) }}
-        {{- with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
-      </figure>
-      {{- end }}
-    </section>
     {{- end }}
 
     {{- with .Content }}
