@@ -351,6 +351,11 @@ h1, h2, h3, h4,
 .msd-card p {
     margin: 0.5rem 0 0;
     font-size: 0.95rem;
+    overflow-wrap: break-word;
+}
+
+.msd-board-email {
+    margin: -0.25rem 0 1.1rem;
 }
 
 .msd-card .msd-card-meta,
@@ -665,7 +670,7 @@ h1, h2, h3, h4,
 }
 
 .msd-sponsor-tier h3 {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.22em;
@@ -675,7 +680,7 @@ h1, h2, h3, h4,
 
 .msd-sponsor-tier-platinum h3 {
     color: var(--msd-red);
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 /* Logo cards get smaller with each tier */

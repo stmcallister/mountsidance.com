@@ -3,14 +3,18 @@ title: "Boosters & Sponsors"
 description: "The families and businesses that make our season possible."
 layout: "boosters"
 # Each section below is hidden until it has at least one entry.
+# General booster email, shown with the Booster Board.
+booster_email: "mountsidanceboosters@gmail.com"
 # Booster board (adults only). `email` is optional.
 contacts:
   - name: "Wendy Pynn"
     role: "President"
+    email: "wbc.dance.president@mountsiboosters.com"
   - name: "Marylyn Bjorn"
     role: "Co-President"
   - name: "Amber McAllister"
     role: "Treasurer"
+    email: "wbc.dance.treasurer@mountsiboosters.com"
   - name: "Emily Andersen"
     role: "Secretary"
   - name: "Jaime O'Connell"
@@ -83,5 +87,6 @@ Mount Si Dance Boosters is a parent and family organization that supports our da
 is welcome to get involved!
 
 **Interested in helping or sponsoring the team?** Email
-[Coach Marissa](mailto:marissa.c.schreiber@gmail.com) or
+[the Boosters](mailto:mountsidanceboosters@gmail.com) or
+[Coach Marissa](mailto:marissa.c.schreiber@gmail.com), or
 [DM us on Instagram](https://www.instagram.com/mountsi_danceteam/).

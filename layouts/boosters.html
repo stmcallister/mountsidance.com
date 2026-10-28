@@ -8,12 +8,16 @@
     {{- with .Params.contacts }}
     <section class="msd-section">
       <h2>Booster Board</h2>
+      {{- with $.Params.booster_email }}
+      <p class="msd-board-email">Email the Boosters at <a href="mailto:{{ . }}">{{ . }}</a></p>
+      {{- end }}
       <div class="msd-card-grid">
         {{- range . }}
         <div class="msd-card">
           <h3>{{ .name }}</h3>
           <p class="msd-card-meta">{{ .role }}</p>
-          {{- with .email }}<p><a href="mailto:{{ . }}">{{ . }}</a></p>{{ end }}
+          {{- /* <wbr> lets long addresses wrap at the @ instead of mid-word */}}
+          {{- with .email }}<p><a href="mailto:{{ . }}">{{ replace . "@" "<wbr>@" | safeHTML }}</a></p>{{ end }}
         </div>
         {{- end }}
       </div>
