@@ -1,9 +1,26 @@
 {{- /*
-  Web version of the camp flyer (originally designed in Canva). Elements are positioned on an
-  816×1056 "page" using percentages and cqw units, so the flyer scales like the printed one.
-  Text comes from the page's `flyer` front matter; the dancer cutout is used unaltered.
+  Camp flyer. If `flyer.image` is set (a file in assets/), the designer's exported flyer is shown
+  as an image linked to registration. Otherwise this renders the web version of the flyer
+  (originally designed in Canva): elements are positioned on an 816×1056 "page" using percentages
+  and cqw units, so it scales like the printed one, with text from the page's `flyer` front matter.
 */}}
 {{- $register := .register | default "#" }}
+{{- with and .image (resources.Get .image) }}
+{{- $alt := printf "%s %s %s flyer. Camp: %s, %s, %s, %s. Performance: %s, %s."
+    $.title_top $.title_main $.subtitle ($.camp_dates | plainify | htmlUnescape) $.camp_time $.grades $.price
+    ($.performance_date | plainify | htmlUnescape) $.performance_time }}
+{{- $sm := .Resize "640x webp q85" }}
+{{- $lg := .Resize "1280x webp q85" }}
+{{- $fallback := .Resize "1280x jpg q85" }}
+<div class="msd-flyer">
+  <a href="{{ $register }}" {{- if hasPrefix $register "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>
+    <picture>
+      <source type="image/webp" srcset="{{ $sm.RelPermalink }} 640w, {{ $lg.RelPermalink }} 1280w" sizes="(max-width: 672px) 100vw, 640px">
+      <img class="msd-flyer-image" src="{{ $fallback.RelPermalink }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" alt="{{ $alt }}">
+    </picture>
+  </a>
+</div>
+{{- else }}
 <div class="msd-flyer">
   <div class="msd-flyer-page">
     <img class="msd-flyer-deco" src="{{ "images/camps/flyer/snowflake-1.png" | relURL }}" alt="" style="left:79.71%;top:0.27%;width:17.6%;height:12.99%">
@@ -46,3 +63,4 @@
     {{- end }}
   </div>
 </div>
+{{- end }}

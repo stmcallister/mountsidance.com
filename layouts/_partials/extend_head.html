@@ -1,6 +1,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-{{- if or .Params.flyer (and .IsHome .Params.feature_camp) }}
+{{- /* Flyer fonts, only needed when the flyer is rebuilt in HTML (no `flyer.image`) */}}
+{{- $flyer := cond .IsHome (cond (.Params.feature_camp | default false) ((site.GetPage "/camps").Params.flyer) dict) (.Params.flyer | default dict) }}
+{{- if and $flyer (not $flyer.image) }}
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Squada+One&family=Roboto+Condensed:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 {{- end }}

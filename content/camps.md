@@ -2,8 +2,11 @@
 title: "Youth Camps"
 description: "Dance camps for young dancers, taught by the Mount Si Dance Team."
 layout: "camps"
-# The camp flyer, recreated from the Canva design. Remove this block to hide it.
+# The camp flyer. Remove this block to hide it. With `image` set (a file in assets/), the
+# designer's exported flyer is shown; without it, the flyer is rebuilt from the fields below.
+# Keep the fields up to date either way: they feed the Camp Details card and the image's alt text.
 flyer:
+  image: "images/camps/holiday-mini-dance-camp-flyer.jpg"   # in assets/, at least 1300px wide
   presenter: "Mount Si Dance Team Boosters"
   title_top: "Mini"
   title_main: "Dance Camp"

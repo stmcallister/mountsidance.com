@@ -771,6 +771,12 @@ a.msd-sponsor:hover {
     box-shadow: var(--msd-shadow);
 }
 
+.msd-flyer-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .msd-flyer-page {
     position: relative;
     aspect-ratio: 816 / 1056;

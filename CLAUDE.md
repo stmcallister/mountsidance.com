@@ -31,7 +31,7 @@ All content is single Markdown pages in `content/` with structured lists in YAML
 - `about.md` — `team_photo`, optional `leadership_photo` + `leadership_shoutout`, `coaches`; body is the team bio.
 - `boosters.md` — `contacts` (booster board, adults), `fundraisers` (past dates hidden), `sponsor_tiers` (level + sponsors with name/logo/url, highest tier first; a logo shows only once its file exists in `static/images/sponsors/`).
 - `performances.md` — `performances` and `competitions` (event/date/end_date/time/location/map/notes); each renders as a season schedule table (`schedule.html`) with past rows muted and the next one marked.
-- `camps.md` — `photo`, `camps` (name/dates/ages/location/cost/details/register).
+- `camps.md` — `flyer` (with `image` set, the designer's exported flyer from `assets/` is shown as an image; without it, `camp_flyer.html` rebuilds the flyer in HTML; its fields also feed the Camp Details card and alt text), `photo`, `camps` (name/dates/ages/location/cost/details/register).
 - `photos.md` — `gallery` photo list (files in `static/images/gallery/`; the first photo is shown large).
 - `tryouts.md` — `signup` link, `key_dates` (past dates shown as last season's); body is tryout details.
 
