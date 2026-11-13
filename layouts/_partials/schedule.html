@@ -44,8 +44,9 @@
         <td class="msd-schedule-event">
           <strong>{{ .event }}</strong>
           {{- if eq .date $next }} <span class="msd-schedule-badge">Next up</span>{{ end }}
+          {{- $map := .map }}
           {{- with .location }}
-          <small class="msd-schedule-where">{{ partial "icon.html" "map-pin" }}{{ with $.map }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ end }}{{ . }}{{ with $.map }}</a>{{ end }}</small>
+          <small class="msd-schedule-where">{{ partial "icon.html" "map-pin" }}{{ with $map }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ end }}{{ . }}{{ with $map }}</a>{{ end }}</small>
           {{- end }}
           {{- with .notes }}<small>{{ . | markdownify }}</small>{{ end }}
         </td>

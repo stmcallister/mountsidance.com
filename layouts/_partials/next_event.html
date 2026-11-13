@@ -1,0 +1,37 @@
+{{- /*
+  Spotlight card for the soonest upcoming event across several schedules.
+  Usage: partial "next_event.html" (slice (dict "label" "Performance" "items" .Params.performances) ...)
+  Renders nothing once every event has passed.
+*/}}
+{{- $all := slice }}
+{{- range . }}
+{{- $label := .label }}
+{{- range .items }}{{ $all = $all | append (merge . (dict "label" $label)) }}{{ end }}
+{{- end }}
+{{- $next := "" }}
+{{- range sort $all "date" }}
+{{- if and (not $next) (ge ((time.AsTime (.end_date | default .date)).AddDate 0 0 1) now) }}{{ $next = . }}{{ end }}
+{{- end }}
+{{- with $next }}
+{{- $date := time.AsTime .date }}
+{{- $end := time.AsTime (.end_date | default .date) }}
+{{- $map := .map }}
+<section class="msd-next-event" aria-label="Next up">
+  <div class="msd-next-event-date">
+    <small>{{ $date.Format "Jan" }}</small>
+    <strong>{{ $date.Format "2" }}{{ if .end_date }}–{{ if eq $date.Month $end.Month }}{{ $end.Format "2" }}{{ else }}{{ $end.Format "Jan 2" }}{{ end }}{{ end }}</strong>
+    <small>{{ $date.Format "Mon" }}{{ if .end_date }}–{{ $end.Format "Mon" }}{{ end }}</small>
+  </div>
+  <div class="msd-next-event-body">
+    <p class="msd-next-event-kicker">Next up · {{ .label }}</p>
+    <h2>{{ .event }}</h2>
+    <p class="msd-next-event-meta">
+      {{- $date.Format "Monday, January 2" }}{{ with .time }} · {{ . }}{{ end }}
+    </p>
+    {{- with .location }}
+    <p class="msd-next-event-meta">{{ partial "icon.html" "map-pin" }}{{ with $map }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ end }}{{ . }}{{ with $map }}</a>{{ end }}</p>
+    {{- end }}
+    {{- with .notes }}<div class="msd-next-event-notes">{{ . | markdownify }}</div>{{ end }}
+  </div>
+</section>
+{{- end }}

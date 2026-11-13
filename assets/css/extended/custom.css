@@ -641,6 +641,91 @@ h1, h2, h3, h4,
     color: var(--secondary);
 }
 
+/* Spotlight card for the soonest upcoming event */
+.msd-next-event {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 0 0 2rem;
+    padding: 1.5rem;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--msd-red);
+    border-radius: var(--radius);
+    box-shadow: var(--msd-shadow);
+}
+
+.msd-next-event-date {
+    flex: 0 0 auto;
+    min-width: 6rem;
+    padding: 0.9rem 0.75rem;
+    border-radius: calc(var(--radius) - 4px);
+    background: var(--msd-blush);
+    text-align: center;
+}
+
+.msd-next-event-date small,
+.msd-next-event-date strong {
+    display: block;
+    line-height: 1.2;
+}
+
+.msd-next-event-date small {
+    color: var(--msd-red);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+}
+
+.msd-next-event-date strong {
+    margin: 0.15rem 0;
+    font-family: var(--msd-display);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--msd-red);
+    white-space: nowrap;
+}
+
+.msd-next-event-body {
+    min-width: 0;
+}
+
+.msd-next-event-kicker {
+    margin: 0 0 0.3rem;
+    color: var(--msd-gold);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+}
+
+.msd-next-event h2 {
+    margin: 0 0 0.4rem;
+    font-family: var(--msd-display);
+    font-size: 1.5rem;
+    line-height: 1.25;
+}
+
+.msd-next-event-meta,
+.msd-next-event-notes p {
+    margin: 0.15rem 0 0;
+    color: var(--secondary);
+    font-size: 0.95rem;
+}
+
+.msd-next-event-notes a {
+    color: var(--msd-red);
+}
+
+.msd-next-event .msd-icon {
+    width: 0.95rem;
+    height: 0.95rem;
+    margin-right: 0.3rem;
+    vertical-align: -0.15em;
+    color: var(--msd-red);
+}
+
 /* ---------- Sponsors ---------- */
 
 .msd-sponsors {
@@ -1081,6 +1166,24 @@ a.msd-sponsor:hover {
 
     .msd-sponsors > h2.msd-thank-you {
         font-size: 2.5rem;
+    }
+
+    .msd-next-event {
+        gap: 1rem;
+        padding: 1.1rem;
+    }
+
+    .msd-next-event-date {
+        min-width: 4.75rem;
+        padding: 0.7rem 0.5rem;
+    }
+
+    .msd-next-event-date strong {
+        font-size: 1.7rem;
+    }
+
+    .msd-next-event h2 {
+        font-size: 1.2rem;
     }
 
     .msd-schedule th,

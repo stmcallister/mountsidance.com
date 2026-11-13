@@ -3,6 +3,10 @@
   <article class="msd-content post-single">
     {{ partial "page_header.html" . }}
 
+    {{ partial "next_event.html" (slice
+      (dict "label" "Performance" "items" .Params.performances)
+      (dict "label" "Competition Squad" "items" .Params.competitions)) }}
+
     <div class="post-content md-content">{{ .Content }}</div>
 
     {{ partial "schedule.html" (dict "title" "Performances" "items" .Params.performances) }}
