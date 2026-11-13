@@ -4,6 +4,12 @@ description: "Highlights from our season."
 layout: "photos"
 # Photos live in static/images/gallery/. The first photo is shown large.
 gallery:
+  - src: "/images/gallery/football-2026-2.jpg"
+    alt: "Mount Si Dance performing at a football halftime show"
+    caption: "Football 2026"
+  - src: "/images/gallery/football-2026-1.jpg"
+    alt: "Mount Si Dance performing at a football halftime show"
+    caption: "Football 2026"
   - src: "/images/gallery/nationals-2026-1.jpg"
     alt: "Mount Si Dance performing at Nationals"
     caption: "Nationals 2026"
