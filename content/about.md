@@ -2,7 +2,7 @@
 title: "About Our Team"
 description: "Character · Accountability · Teamwork · Strength"
 layout: "about"
-team_photo: "/images/team/team-photo.jpg"
+team_photo: "/images/team/team-portrait-2026.jpg"
 # Optional: a group photo of the leadership team with a shoutout (no student names — they're minors).
 # leadership_photo: "/images/team/leadership-photo.jpg"
 # leadership_shoutout: "A big thank-you to this year's student leadership team for ..."

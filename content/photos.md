@@ -37,4 +37,10 @@ gallery:
   - src: "/images/gallery/state-2026-4.jpg"
     alt: "Mount Si Dance celebrating at the state championships"
     caption: "State 2026"
+  - src: "/images/gallery/football-2026-lineup-1.jpg"
+    alt: "Mount Si Dance lined up with red poms on the football field at night"
+    caption: "Football 2026"
+  - src: "/images/gallery/team-heart.jpg"
+    alt: "The team seated in a heart shape with red poms, seen from above"
+    caption: "Team 2026"
 ---

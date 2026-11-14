@@ -33,9 +33,6 @@ competitions:
     date: 2027-01-09
     location: "Kentridge High School"
   - event: "Competition"
-    date: 2027-01-23
-    location: "Kentlake High School"
-  - event: "Competition"
     date: 2027-02-06
     location: "Lakes High School"
   - event: "Competition"
@@ -45,10 +42,8 @@ competitions:
     date: 2027-03-13
     location: "Mount Si High School"
   - event: "State"
-    date: 2027-03-26
-    end_date: 2027-03-27
+    date: 2027-03-27
     location: "Yakima Valley SunDome"
-    notes: "4A schools compete on Saturday, March 27."
 ---
 
 You can catch Mount Si Dance at local events, football and basketball games, and school
