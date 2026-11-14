@@ -50,8 +50,8 @@ Add images under `static/images/` using the paths referenced in the frontmatter.
 
 | Photo | Path |
 |-------|------|
-| Home gallery (first is shown large) | `static/images/gallery/` (listed in `content/_index.md`) |
-| Team photo | `static/images/team/team-photo.jpg` |
+| Photos page gallery (first is shown large) | `static/images/gallery/` (listed in `content/photos.md`) |
+| Team photo | `static/images/team/team-portrait-2026.jpg` (set by `team_photo` in `about.md`) |
 | Leadership photo (optional) | `static/images/team/leadership-photo.jpg` |
 | Sponsor logos | `static/images/sponsors/` |
 | Camp flyer dancers (used unaltered) | `assets/images/camps/flyer-dancers.png` |
